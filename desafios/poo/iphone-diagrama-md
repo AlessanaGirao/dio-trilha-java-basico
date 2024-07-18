@@ -1,0 +1,35 @@
+classDiagram
+    interface Reprodutor {
+        + tocar(): void
+        + pausar(): void
+        + selecionarMusica(String musica): void
+    }
+
+    interface Telefone {
+        + ligar(String numero): void
+        + atender(): void
+        + iniciarCorreioVoz(): void
+    }
+
+    interface Navegador {
+        + exibirPagina(String url): void
+        + adicionarNovaAba(): void
+        + atualizarPagina(): void
+    }
+
+    class IPhone {
+        <<interface>>
+        + tocar(): void
+        + pausar(): void
+        + selecionarMusica(String musica): void
+        + ligar(String numero): void
+        + atender(): void
+        + iniciarCorreioVoz(): void
+        + exibirPagina(String url): void
+        + adicionarNovaAba(): void
+        + atualizarPagina(): void
+    }
+
+    IPhone ..|> Reprodutor
+    IPhone ..|> Telefone
+    IPhone ..|> Navegador
